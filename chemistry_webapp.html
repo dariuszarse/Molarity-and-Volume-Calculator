@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chemistry Calculator</title>
+    <link rel="stylesheet" href="chemistry_webapp_styles.css">
+</head>
+<body>
+
+    <script src="chemistry_webapp_scripts.js"></script>
+
+    <h1>Volumina and Concentration Calculator</h1>
+    <h2>Created by Darius Zarse for a uni project at IUBH.</h2><br>
+
+    <h3>This tool is designed to help with calculating molarity and concentration of solutions mixed in chemical biology, but feel free to use it any way that is useful to you.<br>
+    Simply get started by entering the molarity of your solutions into the "Concentration of available solution" field(s). Make sure to have the right unit selected (M, mM, µM).<br>
+    Next, enter the desired molarity of the solution you want to create and select the correct unit.<br>
+    Finally, enter the amount of solution you want to create and press the "Calculate" button.<br>
+    Enjoy!</h3>
+    <div class="available_solution">
+        Concentration of available solution: <input id="solution1">  <select id="solution1_unit">
+            <option value="1">M</option>
+            <option value="2">mM</option>
+            <option value="3">µM</option>
+        </select>
+    </div>
+    <div class="desired_concentration">
+        Desired concentration: <input id="concentration1">  <select id="concentration1_unit">
+            <option value="1">M</option>
+            <option value="2">mM</option>
+            <option value="3">µM</option>
+        </select>
+    </div> 
+    <div class="required_volume">
+        Required volume: <input readonly id="required_volume1">  <select id="required_volume1_unit" onchange="convert_units()">
+            <option value="1">ml</option>
+            <option selected="selected" value="2">µl</option>
+        </select>
+    </div>
+    <br>
+    <br>
+
+    <div class="available_solution">
+        Concentration of available solution: <input id="solution2">  <select id="solution2_unit">
+            <option value="1">M</option>
+            <option value="2">mM</option>
+            <option value="3">µM</option>
+        </select>
+    </div>
+    <div class="desired_concentration">
+        Desired concentration: <input id="concentration2">  <select id="concentration2_unit">
+            <option value="1">M</option>
+            <option value="2">mM</option>
+            <option value="3">µM</option>
+        </select>
+    </div> 
+    <div class="required_volume">
+        Required volume: <input readonly id="required_volume2">  <select id="required_volume2_unit">
+            <option value="1">ml</option>
+            <option selected="selected" value="2">µl</option>
+        </select>
+    </div>
+    <br>
+    <br>
+
+    <div class="available_solution">
+        Concentration of available solution: <input id="solution3">  <select id="solution3_unit">
+            <option value="1">M</option>
+            <option value="2">mM</option>
+            <option value="3">µM</option>
+        </select>
+    </div>
+    <div class="desired_concentration">
+        Desired concentration: <input id="concentration3">  <select id="concentration3_unit">
+            <option value="1">M</option>
+            <option value="2">mM</option>
+            <option value="3">µM</option>
+        </select>
+    </div> 
+    <div class="required_volume">
+        Required volume: <input readonly id="required_volume3">  <select id="required_volume3_unit">
+            <option value="1">ml</option>
+            <option selected="selected" value="2">µl</option>
+        </select>
+    </div>
+    <br>
+    <br>
+
+    <div class="available_solution">
+        Concentration of available solution: <input id="solution4">  <select id="solution4_unit">
+            <option value="1">M</option>
+            <option value="2">mM</option>
+            <option value="3">µM</option>
+        </select>
+    </div>
+    <div class="desired_concentration">
+        Desired concentration: <input id="concentration4">  <select id="concentration4_unit">
+            <option value="1">M</option>
+            <option value="2">mM</option>
+            <option value="3">µM</option>
+        </select>
+    </div> 
+    <div class="required_volume">
+        Required volume: <input readonly id="required_volume4">  <select id="required_volume4_unit">
+            <option value="1">ml</option>
+            <option selected="selected" value="2">µl</option>
+        </select>
+    </div>
+    <br>
+    <br>
+
+    <div class="available_solution">
+        Concentration of available solution: <input id="solution5">  <select id="solution5_unit">
+            <option value="1">M</option>
+            <option value="2">mM</option>
+            <option value="3">µM</option>
+        </select>
+    </div>
+    <div class="desired_concentration">
+        Desired concentration: <input id="concentration5">  <select id="concentration5_unit">
+            <option value="1">M</option>
+            <option value="2">mM</option>
+            <option value="3">µM</option>
+        </select>
+    </div> 
+    <div class="required_volume">
+        Required volume: <input readonly id="required_volume5">  <select id="required_volume5_unit">
+            <option value="1">ml</option>
+            <option selected="selected" value="2">µl</option>
+        </select>
+    </div>
+    <br>
+    <br>
+    <div id="volume_statement">
+        Desired total volume of the final solution: <input id="total_volume">  <select id="total_volume_unit">
+            <option value="1">ml</option>
+            <option value="2">µl</option>
+        </select>
+    </div>
+    <button class="calculate_button" onclick="get_available_solutions(), get_desired_concentrations(), get_total_volume(), calculate_volumes(), set_volumes()">Calculate</button>
+
+    
+</body>
+</html>
