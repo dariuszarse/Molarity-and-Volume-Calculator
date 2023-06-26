@@ -164,4 +164,5 @@ function set_volumes() {
         volume4_field.value = volume4;
         volume5_field = document.getElementById("required_volume5");
         volume5_field.value = volume5;
+        console.log(fill_up_volume);
 }
