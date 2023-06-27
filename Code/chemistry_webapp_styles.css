@@ -4,18 +4,6 @@
   margin-top: 2%;
 }
 
-h1 {
-  text-align: center;
-}
-
-h2 {
-  text-align: center;
-}
-
-#final_solution_text {
-  text-align: center;
-}
-
-#final_solution_input {
-  text-align: center;
+.container-fluid {
+  background-color: rgb(132, 181, 201);
 }

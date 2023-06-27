@@ -9,24 +9,31 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
 </head>
 <body>
-    <br>
-    <h1>Volumina and Concentration Calculator</h1>
-    <h2>Created by Darius Zarse for a uni project at IUBH.</h2><br>
-    <div class="col-6 offset-3 text-center">
-        <h3>This tool is designed to help with calculating molarity and concentration of solutions mixed in chemical biology.<br>
-        Get started by: <br>
+    <div class="container-fluid text-center" id="big_container">
+        <br>
+        <h1>Volumina and Concentration Calculator</h1>
+        <h2>Created by Darius Zarse for a uni project at IUBH.</h2><br>
+    
+        <h3>Get started by: <br>
         1. Entering the molarity of your solutions into the "available molarity" field(s). <br>
         2. Entering the desired molarity of the solution you want to create and select the correct unit.<br>
         3. Entering the amount of solution you want to create.<br>
         4. Make sure to have the right unit selected (M, mM, µM, ml, µl) and press the "Calculate" button.</h3>
-    </div>
-    <br>
-    <br>
-    <div class="container text-center">
+        <br>
+        <label for="row-dropdown">How many solutions do you want to include in your target mixture?</label>
+        <select id="row-dropdown" onchange="toggleRows(this.value)">
+            <option value="1">1</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+            <option value="4">4</option>
+            <option value="5">5</option>
+        </select>
+        <br>
+        <br>
         <div class="row">
             <div class="col-4">
                 <div class="available_solution">
-                    Available molarity: <input id="solution1">  <select id="solution1_unit">
+                    Available molarity: <input id="solution1" type="number" min="0" step="1" value="0"/>  <select id="solution1_unit">
                         <option value="1">M</option>
                         <option value="2">mM</option>
                         <option value="3">µM</option>
@@ -35,7 +42,7 @@
             </div>
             <div class="col-4">
                 <div class="desired_concentration">
-                    Desired molarity: <input id="concentration1">  <select id="concentration1_unit">
+                    Desired molarity: <input id="concentration1" type="number" min="0" step="1" value="0"/>  <select id="concentration1_unit">
                         <option value="1">M</option>
                         <option value="2">mM</option>
                         <option value="3">µM</option>
@@ -55,7 +62,7 @@
         <div class="row">
             <div class="col-4">
                 <div class="available_solution">
-                    Available molarity: <input id="solution2">  <select id="solution2_unit">
+                    Available molarity: <input id="solution2" type="number" min="0" step="1" value="0"/>  <select id="solution2_unit">
                         <option value="1">M</option>
                         <option value="2">mM</option>
                         <option value="3">µM</option>
@@ -64,7 +71,7 @@
             </div>
             <div class="col-4">
                 <div class="desired_concentration">
-                    Desired molarity: <input id="concentration2">  <select id="concentration2_unit">
+                    Desired molarity: <input id="concentration2" type="number" min="0" step="1" value="0"/>  <select id="concentration2_unit">
                         <option value="1">M</option>
                         <option value="2">mM</option>
                         <option value="3">µM</option>
@@ -85,7 +92,7 @@
         <div class="row">
             <div class="col-4">
                 <div class="available_solution">
-                    Available molarity: <input id="solution3">  <select id="solution3_unit">
+                    Available molarity: <input id="solution3" type="number" min="0" step="1" value="0"/>  <select id="solution3_unit">
                         <option value="1">M</option>
                         <option value="2">mM</option>
                         <option value="3">µM</option>
@@ -94,7 +101,7 @@
             </div>
             <div class="col-4">
                 <div class="desired_concentration">
-                    Desired molarity: <input id="concentration3">  <select id="concentration3_unit">
+                    Desired molarity: <input id="concentration3" type="number" min="0" step="1" value="0"/>  <select id="concentration3_unit">
                         <option value="1">M</option>
                         <option value="2">mM</option>
                         <option value="3">µM</option>
@@ -115,7 +122,7 @@
         <div class="row">
             <div class="col-4">
                 <div class="available_solution">
-                    Available molarity: <input id="solution4">  <select id="solution4_unit">
+                    Available molarity: <input id="solution4" type="number" min="0" step="1" value="0"/>  <select id="solution4_unit">
                         <option value="1">M</option>
                         <option value="2">mM</option>
                         <option value="3">µM</option>
@@ -124,7 +131,7 @@
             </div>
             <div class="col-4">
                 <div class="desired_concentration">
-                    Desired molarity: <input id="concentration4">  <select id="concentration4_unit">
+                    Desired molarity: <input id="concentration4" type="number" min="0" step="1" value="0"/>  <select id="concentration4_unit">
                         <option value="1">M</option>
                         <option value="2">mM</option>
                         <option value="3">µM</option>
@@ -145,7 +152,7 @@
         <div class="row">
             <div class="col-4">
                 <div class="available_solution">
-                    Available molarity: <input id="solution5">  <select id="solution5_unit">
+                    Available molarity: <input id="solution5" type="number" min="0" step="1" value="0"/>  <select id="solution5_unit">
                         <option value="1">M</option>
                         <option value="2">mM</option>
                         <option value="3">µM</option>
@@ -154,7 +161,7 @@
             </div>
             <div class="col-4">
                 <div class="desired_concentration">
-                    Desired molarity: <input id="concentration5">  <select id="concentration5_unit">
+                    Desired molarity: <input id="concentration5" type="number" min="0" step="1" value="0"/>  <select id="concentration5_unit">
                         <option value="1">M</option>
                         <option value="2">mM</option>
                         <option value="3">µM</option>
@@ -170,25 +177,31 @@
                 </div>
             </div>
         </div>
-    </div>
-    <br>
-    <div class="col-12" id="final_solution_text">
-        Desired total volume of the final solution:
-    </div>
-    <br>
-    <div class="col-12" id="final_solution_input">
-        <input id="total_volume">
-        <select id="total_volume_unit">
-            <option value="1">ml</option>
-            <option value="2">µl</option>
-        </select>
-    </div>
-    <br>
-    <div class="row">
+        <br>
+       
+        <div class="col-6 offset-3" id="final_solution_text">
+            Final solution volume:
+            <input id="total_volume">
+            <select id="total_volume_unit">
+                <option value="1">ml</option>
+                <option value="2">µl</option>
+            </select>
+        </div>
+        <br>   
+        <div class="col-6 offset-3">
+            Fill up volume:
+            <input id="fill_up_volume" readonly>
+            <select id="fill_up_unit">
+                <option value="1">ml</option>
+                <option selected="selected" value="2">µl</option>
+            </select>
+        </div>
+        <br>
         <div class="col-12 text-center">
             <button id="calculate_button" onclick="get_available_solutions(), get_desired_concentrations(), get_total_volume(), calculate_volumes(), set_volumes()">Calculate</button>
         </div>
     </div>
+    <br>
 
 
     <script src="chemistry_webapp_scripts.js"></script>

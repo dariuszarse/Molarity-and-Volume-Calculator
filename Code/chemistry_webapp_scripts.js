@@ -1,3 +1,16 @@
+function toggleRows(visibleRows) {
+        const rows = document.querySelectorAll("#big_container .row");
+      
+        rows.forEach((row) => {
+          row.style.display = "none";
+        });
+      
+        for (let i = 0; i < visibleRows; i++) {
+          rows[i].style.display = "block";
+        }
+      }
+      
+
 function get_available_solutions() {
         get_available_solution1();
         get_available_solution2();
@@ -145,13 +158,29 @@ function get_total_volume() {
 }
 
 function calculate_volumes() {
-        volume1 = total_volume_converted/(solution1_converted/concentration1_converted);
-        volume2 = total_volume_converted/(solution2_converted/concentration2_converted);
-        volume3 = total_volume_converted/(solution3_converted/concentration3_converted);
-        volume4 = total_volume_converted/(solution4_converted/concentration4_converted);
-        volume5 = total_volume_converted/(solution5_converted/concentration5_converted);
-        fill_up_volume = total_volume_converted-(volume1+volume2+volume3+volume4+volume5);
-}
+        volume1 = 0;
+        volume2 = 0;
+        volume3 = 0;
+        volume4 = 0;
+        volume5 = 0;
+        if (solution1_converted !== 0 && concentration1_converted !== 0) {
+          volume1 = total_volume_converted / (solution1_converted / concentration1_converted);
+        }
+        if (solution2_converted !== 0 && concentration2_converted !== 0) {
+          volume2 = total_volume_converted / (solution2_converted / concentration2_converted);
+        }
+        if (solution3_converted !== 0 && concentration3_converted !== 0) {
+          volume3 = total_volume_converted / (solution3_converted / concentration3_converted);
+        }
+        if (solution4_converted !== 0 && concentration4_converted !== 0) {
+          volume4 = total_volume_converted / (solution4_converted / concentration4_converted);
+        }
+        if (solution5_converted !== 0 && concentration5_converted !== 0) {
+          volume5 = total_volume_converted / (solution5_converted / concentration5_converted);
+        }
+        fill_up_volume = total_volume_converted - (volume1 + volume2 + volume3 + volume4 + volume5);
+      }
+      
 
 function set_volumes() {
         volume1_field = document.getElementById("required_volume1");
@@ -164,5 +193,6 @@ function set_volumes() {
         volume4_field.value = volume4;
         volume5_field = document.getElementById("required_volume5");
         volume5_field.value = volume5;
-        console.log(fill_up_volume);
+        fill_up_volume_field = document.getElementById("fill_up_volume");
+        fill_up_volume_field.value = fill_up_volume;
 }
