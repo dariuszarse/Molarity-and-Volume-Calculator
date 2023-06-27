@@ -4,6 +4,14 @@
   margin-top: 2%;
 }
 
+.col-4 {
+  width: 33%;
+  float: left;
+  margin-bottom: 1.5rem;
+  margin-top: 1.5rem;
+}
+
 .container-fluid {
   background-color: rgb(132, 181, 201);
+  height: 100%;
 }
