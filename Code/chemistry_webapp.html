@@ -28,6 +28,11 @@
             <option value="3">3</option>
             <option value="4">4</option>
             <option value="5">5</option>
+            <option value="6">6</option>
+            <option value="7">7</option>
+            <option value="8">8</option>
+            <option value="9">9</option>
+            <option value="10">10</option>
         </select>
         <br>
         <br>
@@ -179,7 +184,154 @@
             </div>
         </div>
         <br>
-       
+        <div class="row">
+            <div class="col-4">
+                <div class="available_solution">
+                    Available molarity: <input id="solution6" type="number" min="0" step="1" value="0"/>  <select id="solution6_unit">
+                        <option value="1">M</option>
+                        <option value="2">mM</option>
+                        <option value="3">µM</option>
+                    </select>
+                </div>
+            </div>
+            <div class="col-4">
+                <div class="desired_concentration">
+                    Desired molarity: <input id="concentration6" type="number" min="0" step="1" value="0"/>  <select id="concentration6_unit">
+                        <option value="1">M</option>
+                        <option value="2">mM</option>
+                        <option value="3">µM</option>
+                    </select>
+                </div> 
+            </div>
+            <div class="col-4">
+                <div class="required_volume">
+                    Required volume: <input readonly id="required_volume6">  <select id="required_volume6_unit" onchange="convert_units()">
+                        <option value="1">ml</option>
+                        <option selected="selected" value="2">µl</option>
+                    </select>
+                </div>
+            </div>
+        </div>
+        <br>
+        <div class="row">
+            <div class="col-4">
+                <div class="available_solution">
+                    Available molarity: <input id="solution7" type="number" min="0" step="1" value="0"/>  <select id="solution7_unit">
+                        <option value="1">M</option>
+                        <option value="2">mM</option>
+                        <option value="3">µM</option>
+                    </select>
+                </div>
+            </div>
+            <div class="col-4">
+                <div class="desired_concentration">
+                    Desired molarity: <input id="concentration7" type="number" min="0" step="1" value="0"/>  <select id="concentration7_unit">
+                        <option value="1">M</option>
+                        <option value="2">mM</option>
+                        <option value="3">µM</option>
+                    </select>
+                </div> 
+            </div>
+            <div class="col-4">
+                <div class="required_volume">
+                    Required volume: <input readonly id="required_volume7">  <select id="required_volume7_unit">
+                        <option value="1">ml</option>
+                        <option selected="selected" value="2">µl</option>
+                    </select>
+                </div>
+            </div>
+        </div>
+        <br>
+
+        <div class="row">
+            <div class="col-4">
+                <div class="available_solution">
+                    Available molarity: <input id="solution8" type="number" min="0" step="1" value="0"/>  <select id="solution8_unit">
+                        <option value="1">M</option>
+                        <option value="2">mM</option>
+                        <option value="3">µM</option>
+                    </select>
+                </div>
+            </div>
+            <div class="col-4">
+                <div class="desired_concentration">
+                    Desired molarity: <input id="concentration8" type="number" min="0" step="1" value="0"/>  <select id="concentration8_unit">
+                        <option value="1">M</option>
+                        <option value="2">mM</option>
+                        <option value="3">µM</option>
+                    </select>
+                </div>
+            </div>
+            <div class="col-4">
+                <div class="required_volume">
+                    Required volume: <input readonly id="required_volume8">  <select id="required_volume8_unit">
+                        <option value="1">ml</option>
+                        <option selected="selected" value="2">µl</option>
+                    </select>
+                </div>
+            </div>
+        </div>
+        <br>
+
+        <div class="row">
+            <div class="col-4">
+                <div class="available_solution">
+                    Available molarity: <input id="solution9" type="number" min="0" step="1" value="0"/>  <select id="solution9_unit">
+                        <option value="1">M</option>
+                        <option value="2">mM</option>
+                        <option value="3">µM</option>
+                    </select>
+                </div>
+            </div>
+            <div class="col-4">
+                <div class="desired_concentration">
+                    Desired molarity: <input id="concentration9" type="number" min="0" step="1" value="0"/>  <select id="concentration9_unit">
+                        <option value="1">M</option>
+                        <option value="2">mM</option>
+                        <option value="3">µM</option>
+                    </select>
+                </div> 
+            </div>
+            <div class="col-4">
+                <div class="required_volume">
+                    Required volume: <input readonly id="required_volume9">  <select id="required_volume9_unit">
+                        <option value="1">ml</option>
+                        <option selected="selected" value="2">µl</option>
+                    </select>
+                </div>
+            </div>
+        </div>
+        <br>
+
+        <div class="row">
+            <div class="col-4">
+                <div class="available_solution">
+                    Available molarity: <input id="solution10" type="number" min="0" step="1" value="0"/>  <select id="solution10_unit">
+                        <option value="1">M</option>
+                        <option value="2">mM</option>
+                        <option value="3">µM</option>
+                    </select>
+                </div>
+            </div>
+            <div class="col-4">
+                <div class="desired_concentration">
+                    Desired molarity: <input id="concentration10" type="number" min="0" step="1" value="0"/>  <select id="concentration10_unit">
+                        <option value="1">M</option>
+                        <option value="2">mM</option>
+                        <option value="3">µM</option>
+                    </select>
+                </div> 
+            </div>
+            <div class="col-4">
+                <div class="required_volume">
+                    Required volume: <input readonly id="required_volume10">  <select id="required_volume10_unit">
+                        <option value="1">ml</option>
+                        <option selected="selected" value="2">µl</option>
+                    </select>
+                </div>
+            </div>
+        </div>
+        <br>
         <div class="col-6 offset-3" id="final_solution_text">
             Final solution volume:
             <input id="total_volume">
