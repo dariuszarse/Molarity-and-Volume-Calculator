@@ -14,13 +14,6 @@ function toggleRows(visibleRows) {
   });
 }
 
-function clearInput(input) {
-  if (!input.dataset.defaultCleared) {
-    input.value = '';
-    input.dataset.defaultCleared = true;
-  }
-}
-
 window.addEventListener('load', function() {
   // Store the default values of input fields
   const defaultValues = {};
@@ -45,8 +38,8 @@ window.addEventListener('load', function() {
   });
 
   // Refresh button click event handler
-  const refreshButton = document.getElementById('refreshButton');
-  refreshButton.addEventListener('click', function() {
+  const refresh_button = document.getElementById('refresh_button');
+  refresh_button.addEventListener('click', function() {
     inputFields.forEach((input) => {
       input.value = defaultValues[input.id];
     });
