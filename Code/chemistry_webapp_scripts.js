@@ -1,22 +1,57 @@
 window.addEventListener('load', function() {
-        toggleRows(0);
-      });
-      
-      function toggleRows(visibleRows) {
-        const rows = document.querySelectorAll("#big_container .row");
-      
-        rows.forEach((row, index) => {
-          if (index < 10) {
-            row.style.display = "none";
-          }
-        });
-      
-        for (let i = 0; i < visibleRows; i++) {
-          rows[i].style.display = "block";
-        }
+  toggleRows(0);
+});
+
+function toggleRows(visibleRows) {
+  const rows = document.querySelectorAll("#big_container .row");
+
+  rows.forEach((row, index) => {
+    if (index < visibleRows) {
+      row.style.display = "block";
+    } else {
+      row.style.display = "none";
+    }
+  });
 }
 
+function clearInput(input) {
+  if (!input.dataset.defaultCleared) {
+    input.value = '';
+    input.dataset.defaultCleared = true;
+  }
+}
 
+window.addEventListener('load', function() {
+  // Store the default values of input fields
+  const defaultValues = {};
+  const inputFields = document.querySelectorAll('input');
+
+  inputFields.forEach((input) => {
+    defaultValues[input.id] = input.value;
+
+    input.addEventListener('focus', function() {
+      // Clear the input field when focused
+      if (input.value === defaultValues[input.id]) {
+        input.value = '';
+      }
+    });
+
+    input.addEventListener('blur', function() {
+      // Restore the default value if the input field is empty
+      if (input.value === '') {
+        input.value = defaultValues[input.id];
+      }
+    });
+  });
+
+  // Refresh button click event handler
+  const refreshButton = document.getElementById('refreshButton');
+  refreshButton.addEventListener('click', function() {
+    inputFields.forEach((input) => {
+      input.value = defaultValues[input.id];
+    });
+  });
+});
 
 function get_available_solutions() {
         solution_converted = [];
