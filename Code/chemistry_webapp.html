@@ -332,6 +332,7 @@
             </div>
         </div>
         <br>
+        <div class="row">
         <div class="col-6 offset-3" id="final_solution_text">
             Final solution volume:
             <input id="total_volume">
@@ -340,7 +341,8 @@
                 <option value="2">µl</option>
             </select>
         </div>
-        <br>   
+        </div>
+        <div class="row"> 
         <div class="col-6 offset-3">
             Fill up volume:
             <input id="fill_up_volume" readonly>
@@ -349,9 +351,12 @@
                 <option selected="selected" value="2">µl</option>
             </select>
         </div>
+        </div>
         <br>
+        <div class="row">
         <div class="col-12 text-center">
             <button id="calculate_button" onclick="get_available_solutions(), get_desired_concentrations(), get_total_volume(), calculate_volumes(), set_volumes()">Calculate</button>
+        </div>
         </div>
     </div>
     <br>

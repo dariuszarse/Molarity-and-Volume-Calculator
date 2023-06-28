@@ -5,8 +5,10 @@ window.addEventListener('load', function() {
       function toggleRows(visibleRows) {
         const rows = document.querySelectorAll("#big_container .row");
       
-        rows.forEach((row) => {
-          row.style.display = "none";
+        rows.forEach((row, index) => {
+          if (index < 10) {
+            row.style.display = "none";
+          }
         });
       
         for (let i = 0; i < visibleRows; i++) {
