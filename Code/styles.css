@@ -1,0 +1,33 @@
+html, body {
+  height: 100%;
+  background-color: rgb(132, 181, 201);
+}
+
+.col-3 {
+  width: 25%;
+  float: left;
+}
+
+.row {
+  box-sizing: border-box;
+  margin-top: 2rem;
+  margin-bottom: 2rem;
+}
+
+.container-fluid {
+  min-height: 100vh;
+  background-color: rgb(132, 181, 201);
+}
+
+.container-fluid h1 {
+  font-size: 40px;
+}
+
+.container-fluid h2 {
+  font-size: 15px;
+}
+
+.container-fluid h3 {
+  font-size: 20px;
+  line-height: 150%;
+}
