@@ -105,13 +105,38 @@ function calculate_volumes() {
         fill_up_volume = total_volume_converted - volumes.reduce((acc, cur) => acc + cur, 0);
 }
 
-//output 
+//output in fields
 function set_volumes() {
         for (let i = 1; i <= 10; i++) {
           volume_field = document.getElementById("required_volume" + i);
           volume_field.value = volumes[i - 1];
         }
-        
         fill_up_volume_field = document.getElementById("fill_up_volume");
         fill_up_volume_field.value = fill_up_volume;
+}
+
+//output in text
+function write_output() {
+  const selectedSolutions = parseInt(document.getElementById('row-dropdown').value);
+  let outputMessage = '';
+
+  for (let i = 1; i <= selectedSolutions; i++) {
+    const solutionName = document.getElementById(`solution${i}_name`).value;
+    let requiredVolume = parseFloat(document.getElementById(`required_volume${i}`).value);
+    if (requiredVolume >= 1000) {
+      requiredVolume /= 1000;
+      outputMessage += `${i}. You need ${requiredVolume.toFixed(2)} ml of ${solutionName}.<br>`;
+    } else {
+      outputMessage += `${i}. You need ${requiredVolume} µl of ${solutionName}.<br>`;
+    }
+  }
+  const fill_up_volume = parseFloat(document.getElementById('fill_up_volume').value);
+  if (fill_up_volume >= 1000) {
+    const fill_up_volume_in_ml = (fill_up_volume / 1000).toFixed(2);
+    outputMessage += `${selectedSolutions + 1}. Fill it all up with ${fill_up_volume_in_ml} ml of your fill-up liquid.`;
+  } else {
+    outputMessage += `${selectedSolutions + 1}. Fill it all up with ${fill_up_volume} µl of your fill-up liquid.`;
+  }
+  const outputElement = document.getElementById('output');
+  outputElement.innerHTML = outputMessage;
 }

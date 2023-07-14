@@ -14,11 +14,14 @@
         <h1>Volumina and Concentration Calculator</h1>
         <h2>Created by Darius Zarse for a uni project at IUBH.</h2>
         <br>
-        <h3>Get started by: <br>
-        1. Entering the molarity of your solutions into the "available molarity" field(s). <br>
-        2. Entering the desired molarity of the solution you want to create and select the correct unit.<br>
-        3. Entering the amount of solution you want to create.<br>
-        4. Make sure to have the right unit selected (M, mM, µM, ml, µl) and press the "Calculate" button.</h3>
+        <h3>How to? <br>
+        1. Select the number of solutions you want to include in your final solution. <br>
+        2. Entering the molarity of your solutions into the "available molarity" field(s). <br>
+        3. Entering the desired molarity of the solution you want to create and select the correct unit.<br>
+        4. Entering the amount of solution you want to create.<br>
+        5. Make sure to have the right unit selected (M, mM, µM, ml, µl) and press the "Calculate" button. <br>
+        6. The required volumes will be displayed in the rightmost column and instructions will appear at the bottom of the page. <br>
+        7. If, at any point, you want to restart, just press the "Refresh" button.</h3>
         <br>
         <label for="row-dropdown">How many solutions do you want to include in your target mixture?</label>
         <select id="row-dropdown" onchange="toggleRows(this.value)">
@@ -77,8 +80,7 @@
             <div class="col-3">
                 <div class="required_volume">
                     <input readonly id="required_volume1">  <select id="required_volume1_unit">
-                        <option value="1">ml</option>
-                        <option selected="selected" value="2">µl</option>
+                        <option selected="selected" value="1">µl</option>
                     </select>
                 </div>
             </div>
@@ -111,8 +113,7 @@
             <div class="col-3">
                 <div class="required_volume">
                     <input readonly id="required_volume2">  <select id="required_volume2_unit">
-                        <option value="1">ml</option>
-                        <option selected="selected" value="2">µl</option>
+                        <option selected="selected" value="1">µl</option>
                     </select>
                 </div>
             </div>
@@ -146,8 +147,7 @@
             <div class="col-3">
                 <div class="required_volume">
                     <input readonly id="required_volume3">  <select id="required_volume3_unit">
-                        <option value="1">ml</option>
-                        <option selected="selected" value="2">µl</option>
+                        <option selected="selected" value="1">µl</option>
                     </select>
                 </div>
             </div>
@@ -181,8 +181,7 @@
             <div class="col-3">
                 <div class="required_volume">
                     <input readonly id="required_volume4">  <select id="required_volume4_unit">
-                        <option value="1">ml</option>
-                        <option selected="selected" value="2">µl</option>
+                        <option selected="selected" value="1">µl</option>
                     </select>
                 </div>
             </div>
@@ -216,8 +215,7 @@
             <div class="col-3">
                 <div class="required_volume">
                     <input readonly id="required_volume5">  <select id="required_volume5_unit">
-                        <option value="1">ml</option>
-                        <option selected="selected" value="2">µl</option>
+                        <option selected="selected" value="1">µl</option>
                     </select>
                 </div>
             </div>
@@ -251,8 +249,7 @@
             <div class="col-3">
                 <div class="required_volume">
                     <input readonly id="required_volume6">  <select id="required_volume6_unit" onchange="convert_units()">
-                        <option value="1">ml</option>
-                        <option selected="selected" value="2">µl</option>
+                        <option selected="selected" value="1">µl</option>
                     </select>
                 </div>
             </div>
@@ -286,8 +283,7 @@
             <div class="col-3">
                 <div class="required_volume">
                     <input readonly id="required_volume7">  <select id="required_volume7_unit">
-                        <option value="1">ml</option>
-                        <option selected="selected" value="2">µl</option>
+                        <option selected="selected" value="1">µl</option>
                     </select>
                 </div>
             </div>
@@ -321,8 +317,7 @@
             <div class="col-3">
                 <div class="required_volume">
                     <input readonly id="required_volume8">  <select id="required_volume8_unit">
-                        <option value="1">ml</option>
-                        <option selected="selected" value="2">µl</option>
+                        <option selected="selected" value="1">µl</option>
                     </select>
                 </div>
             </div>
@@ -356,8 +351,7 @@
             <div class="col-3">
                 <div class="required_volume">
                     <input readonly id="required_volume9">  <select id="required_volume9_unit">
-                        <option value="1">ml</option>
-                        <option selected="selected" value="2">µl</option>
+                        <option selected="selected" value="1">µl</option>
                     </select>
                 </div>
             </div>
@@ -391,8 +385,7 @@
             <div class="col-3">
                 <div class="required_volume">
                     <input readonly id="required_volume10">  <select id="required_volume10_unit">
-                        <option value="1">ml</option>
-                        <option selected="selected" value="2">µl</option>
+                        <option selected="selected" value="1">µl</option>
                     </select>
                 </div>
             </div>
@@ -411,17 +404,19 @@
             Fill up volume:
             <input id="fill_up_volume" readonly>
             <select id="fill_up_unit">
-                <option value="1">ml</option>
-                <option selected="selected" value="2">µl</option>
+                <option selected="selected" value="1">µl</option>
             </select>
         </div>
         <br>
         <div class="col-12 text-center">
-            <button id="calculate_button" onclick="get_available_solutions(), get_desired_concentrations(), get_total_volume(), calculate_volumes(), set_volumes()">Calculate</button>
+            <button id="calculate_button" onclick="get_available_solutions(), get_desired_concentrations(), get_total_volume(), calculate_volumes(), set_volumes(), write_output()">Calculate</button>
         </div>
         <br>
         <div class="col-12 text-center">
             <button id="refresh_button">Refresh</button>
+        </div>
+        <br>
+        <div id="output">
         </div>
     </div>
     <br>
