@@ -3,7 +3,7 @@ README // INSTALLATION GUIDE
 ACCESSING WEBSITE:
 
 The website is hosted under the URL:
-
+https://dev5489.dd03wgeedl0cm.amplifyapp.com/
 
 For opening it on your private machine follow these steps:
 1. Install Visual Studio Code (https://code.visualstudio.com/download)
